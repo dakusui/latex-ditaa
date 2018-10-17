@@ -41,7 +41,7 @@ image::resources/rendered.png[Rendered Ascii Art,480,360]
 * Compile your  ```.tex``` files as usual, but giving  ```--shell-escape``` option to your ```(pdf)latex``` command.
 
 == Tips
-Online sites such as [ascii-flow](http://stable.ascii-flow.appspot.com/#Draw) will be your friends!
+Online sites such as http://stable.ascii-flow.appspot.com/#Draw[ascii-flow] will be your friends!
 
 == Future Works
 * Make it possible to define caption and filename independently.
