@@ -1,0 +1,108 @@
+\documentclass[pagesize=auto]{scrartcl}
+
+\addtokomafont{title}{\rmfamily}
+
+\title{The \textsf{ditaa} package}
+\author{Hiroshi Ukai}
+\date{2018/10/18}
+
+
+\usepackage{verbatim}
+\def\imagepath{./resources}
+\usepackage[imagepath=\imagepath]{ditaa}
+\graphicspath{ {\imagepath/} }
+
+\begin{document}
+
+\maketitle
+
+\noindent
+The \LaTeX\ \textsf{ditaa} package renders your ascii art inside your LaTeX files into pretty image files which you can use them in your papers.
+
+\minisec{Usage:}
+To \texttt{usepackage} \textbf{ditaa}, typically do following.
+\begin{verbatim}
+  \def\imagepath{./resources}
+  \usepackage[imagepath=\imagepath]{ditaa}
+  \graphicspath{ {\imagepath/} }
+\end{verbatim}
+
+A vaiable \texttt{\textbackslash imagepath} points a directory that your images reside.
+Under it, you need to create a directory \texttt{ditaa} in advance.
+In this directory, \texttt{ditaa} environment creates its working files.
+
+\minisec{Features:}
+%
+This is a ditaa diagram example.
+\begin{verbatim}
+  \begin{ditaa}[8cm]{ditaa caption example}{ditaaexample}
+    +--------+   +-------+    +-------+
+    |        | --+ ditaa +--> |       |
+    |  Text  |   +-------+    |diagram|
+    |Document|   |!magic!|    |       |
+    |     {d}|   |       |    |       |
+    +---+----+   +-------+    +-------+
+        :                         ^
+        |       Lots of work      |
+        +-------------------------+
+  \end{ditaa}
+\end{verbatim}
+
+The fragment above will be rendered into following diagram.
+
+\begin{ditaa}[8cm]{ditaa caption example}{ditaaexample}
+  +--------+   +-------+    +-------+
+  |        | --+ ditaa +--> |       |
+  |  Text  |   +-------+    |diagram|
+  |Document|   |!magic!|    |       |
+  |     {d}|   |       |    |       |
+  +---+----+   +-------+    +-------+
+      :                         ^
+      |       Lots of work      |
+      +-------------------------+
+\end{ditaa}
+\pagebreak
+And you can specify image width like this Figure.\ref{fig:ditaaexample2}.
+
+\begin{verbatim}
+  \begin{ditaa}[6cm]{ditaa caption example2}{ditaaexample2}
+    +---------+
+    | cBLU    |
+    |         |
+    |    +----+
+    |    |cPNK|
+    |    |    |
+    +----+----+
+  \end{ditaa}
+\end{verbatim}
+
+To denote your diagram, you can do
+
+\begin{verbatim}
+
+  Figure~\ref{fig:ditaaexample2}
+
+\end{verbatim}
+
+, where \texttt{ditaaexample2} is the second argument you gave to the \texttt{ditaa} environment as you see above.
+The prefix \texttt{fig:} is given by \texttt{ditaa} environment automatically.
+
+\begin{ditaa}[6cm]{ditaa caption example2}{ditaaexample2}
+  +---------+
+  | cBLU    |
+  |         |
+  |    +----+
+  |    |cPNK|
+  |    |    |
+  +----+----+
+\end{ditaa}
+
+Enjoy!
+
+\minisec{ChangeLog:}
+%
+\begin{labeling}[\hspace{\labelsep}--]{0.9}
+\item[0.9] Preparation for first \textsf{ditaa} release.
+\end{labeling}
+
+\end{document}
