@@ -134,6 +134,5 @@ sympy-plots-for-*.tex/
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
-ditaa-20181018.zip
+ditaa-*.zip
 ditaa/
-examples/example.tex

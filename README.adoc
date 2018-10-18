@@ -29,7 +29,7 @@ The source above will be converted into a following diagram and incorporated in 
 image::resources/rendered.png[Rendered Ascii Art,480,360]
 
 == Prerequisites
-* You need to have http://ditaa.sourceforge.net/[ditaa] installed. (Need to be able to run ```ditaa``` from your command line). Fortunately, recent package managers such as ```apt``` allow you to install it with a single command line ```sudo apt install ditaa```. ```brew``` let me do similar ```sudo brew isntall ditaa``` on my mac. For windows, sorry, please let me know how to do that...
+* You need to have http://ditaa.sourceforge.net/[ditaa] installed. (Need to be able to run `ditaa` from your command line). Fortunately, recent package managers such as ```apt``` allow you to install it with a single command line ```sudo apt install ditaa```. ```brew``` let me do similar ```sudo brew isntall ditaa``` on my mac. For windows, sorry, please let me know how to do that...
 * You need to give an option ```--shell-escape``` to your LaTeX compiler (such as ```pdflatex```, ```latex```, etc) command whichever you use.
 
 
