@@ -1,8 +1,8 @@
 = The LaTeX ditaa package
 
-With this, you will not need to bring your diagrams outside your  ```.tex``` file and not to worry about wiring such files for diagrams, and tools (Microsoft Visio, PowerPoint, Libre Office tools, as such) from which they are created.
+With this, you will not need to bring your diagrams outside your  `.tex` file and not to worry about wiring such files for diagrams, and tools (Microsoft Visio, PowerPoint, Libre Office tools, as such) from which they are created.
 
-```
+....
 \begin{ditaa}{ditaa caption example}{ditaaexample}
     +-----+     +----+     +---+
     |Store+---->|This+---->|One|
@@ -19,7 +19,7 @@ With this, you will not need to bring your diagrams outside your  ```.tex``` fil
     +-----------+     +--+
 \end{ditaa}
 
-```
+....
 
 The source above will be converted into a following diagram and incorporated in your final PDF.
 
@@ -29,24 +29,30 @@ The source above will be converted into a following diagram and incorporated in 
 image::resources/rendered.png[Rendered Ascii Art,480,360]
 
 == Prerequisites
-* You need to have http://ditaa.sourceforge.net/[ditaa] installed. (Need to be able to run ```ditaa``` from your command line). Fortunately, recent package managers such as ```apt``` allow you to install it with a single command line ```sudo apt install ditaa```. ```brew``` let me do similar ```sudo brew isntall ditaa``` on my mac. For windows, sorry, please let me know how to do that...
-* You need to give an option ```--shell-escape``` to your LaTeX compiler (such as ```pdflatex```, ```latex```, etc) command whichever you use.
+* You need to have http://ditaa.sourceforge.net/[ditaa] installed. (Need to be able to run `ditaa` from your command line). Fortunately, recent package managers such as `apt` allow you to install it with a single command line `sudo apt install ditaa`. `brew` let me do similar `sudo brew isntall ditaa` on my mac. For windows, sorry, please let me know how to do that...
+* You need to give an option `--shell-escape` to your LaTeX compiler (such as `pdflatex`, `latex`, etc) command whichever you use.
 
 
 == How to use
 
-* Place the ```ditaa.sty``` file at the same directory as your ```.tex``` file.
-* Create ```ditaa``` directory under the directory you have for the other non-ditaa images. This package will create ```.ditaa``` and ```.png``` files.
-* Do ```usepackage[imagepath=IMAGEPATH]{ditaa}``` beffore ```\begin{document}```. The IMAGEPATH is the directory you have images.
-* Compile your  ```.tex``` files as usual, but giving  ```--shell-escape``` option to your ```(pdf)latex``` command.
+* Place the `ditaa.sty` file at the same directory as your `.tex` file. (This step will not be necessary, if `latex-ditaa` is available from CTAN)
+* Create `ditaa` directory under the directory you have for the other non-ditaa images. This package will create `.ditaa` and `.png` files here.
+* Do `usepackage[imagepath=IMAGEPATH]{ditaa}` beffore `\begin{document}`. The IMAGEPATH is the directory you have images.
+* Compile your  `.tex` files as usual, but giving  `--shell-escape` option to your `(pdf)latex` command.
+
+Typically, run `mkdir ./resources/graphics` and do following in your .tex file.
+....
+\def\imagepath{./resources/graphics}
+\usepackage[imagepath=\imagepath]{ditaa}
+\graphicspath{ {\imagepath/} }
+....
+
+Then compile your file with `pdflatex --shell-escape`.
 
 == Tips
 Online sites such as http://stable.ascii-flow.appspot.com/#Draw[ascii-flow] will be your friends!
 
 == Future Works
-* Make it possible to define caption and filename independently.
-* ~~Improve the way to define resource directory.~~
-* ~~Make it possible to specify image size.~~ (Now you can specify image width. See the example)
 * I want to use this in OverLeaf. Publish in CTAN? Help me. I'm a LaTeX newbie.
 
 == References
