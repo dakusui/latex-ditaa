@@ -27,8 +27,8 @@
         \def\ditaafigwidth{#1}
         \VerbatimOut{\ditaafile}}
     {\endVerbatimOut
-        \immediate\write18{ditaa -E "\ditaafile" "\ditaadir/\ditaastem.png"}
-        \begin{figure}[ht]
+        \immediate\write18{ditaa.jar -E "\ditaafile" "\ditaadir/\ditaastem.png"}
+        \begin{figure}[H]
             \begin{center}
                 \vspace{-1em}
                 \includegraphics[width=\ditaafigwidth]{\ditaadir/\ditaastem.png}
