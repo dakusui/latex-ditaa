@@ -106,8 +106,8 @@ Its supported options are as follow (summed up) :
 -W,--fixed-slope
 ....
 
-Cannot be specified on a group basis, only in the preamble.<br>
-Just add the requested parameters without the leading/separator dash(es).<br>
+Cannot be specified on a group basis, only in the preamble. +
+Just add the requested parameters without the leading/separator dash(es). +
 
 [source,latex]
 ----
