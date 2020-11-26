@@ -18,7 +18,6 @@ With this, you will not need to bring your diagrams outside your  `.tex` file an
     |another one+---->|Hi|
     +-----------+     +--+
 \end{ditaa}
-
 ....
 
 The source above will be converted into a following diagram and incorporated in your final PDF.
@@ -31,7 +30,6 @@ image::resources/rendered.png[Rendered Ascii Art,480,360]
 == Prerequisites
 * You need to have http://ditaa.sourceforge.net/[ditaa] installed. (Need to be able to run `ditaa` from your command line). Fortunately, recent package managers such as `apt` allow you to install it with a single command line `sudo apt install ditaa`. `brew` let me do similar `sudo brew isntall ditaa` on my mac. For windows, sorry, please let me know how to do that...
 * You need to give an option `--shell-escape` to your LaTeX compiler (such as `pdflatex`, `latex`, etc) command whichever you use.
-
 
 == How to use
 
@@ -49,6 +47,80 @@ Typically, run `mkdir ./resources/graphics` and do following in your .tex file.
 
 Then compile your file with `pdflatex --shell-escape`.
 
+== Options
+
+* Use https://github.com/stathissideris/ditaa that support SVG
+
+Its supported options are as follow (summed up) :
+
+....
+% Turns anti-aliasing off
+-A,--no-antialias
+
+% The background colour of the image
+-b,--background <BACKGROUND>
+
+% Renders the debug grid
+-d,--debug
+
+% Prevents the separation of common edges
+-E,--no-separation
+
+% The encoding of the input file
+-e,--encoding <ENCODING>
+
+% The input is an HTML file
+-h,--html
+
+% Prints usage help
+--help
+
+% Image file is overwriten
+-o,--overwrite
+
+% All corners to be rendered as round corners
+-r,--round-corners
+
+% Turns off the drop-shadow effect
+-S,--no-shadows
+
+% Size of the rendered image
+-s,--scale <SCALE>
+
+% SVG image as destination file
+--svg
+
+% SVG font URL
+--svg-font-url <FONT>
+
+% Diagram rendered on a transparent background
+-T,--transparent
+
+% Tabs interpreted as x spaces
+-t,--tabs <TABS>
+
+% Makes ditaa more verbose
+-v,--verbose
+
+% Sides of parallelograms as fixed slope
+-W,--fixed-slope
+....
+
+Cannot be specified on a group basis, only in the preamble. +
+Just add the requested parameters without the leading/separator dash(es). +
+
+[source,latex]
+----
+\usepackage[S]{ditaa}
+----
+
+or :
+
+[source,latex]
+----
+\usepackage[noshadows, svgfonturl={carlito-regular-webfont.svg}]{ditaa}
+----
+
 == Tips
 Online sites such as http://stable.ascii-flow.appspot.com/#Draw[ascii-flow] will be your friends!
 
@@ -57,4 +129,3 @@ Online sites such as http://stable.ascii-flow.appspot.com/#Draw[ascii-flow] will
 
 == References
 * https://github.com/deselaers/latex-beamerposter[latex-beamerposter]: I learned a lot from this; such as how to package my .sty, how to organize directories under my repo for LaTeX style package, etc.
-
